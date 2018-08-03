@@ -1,0 +1,17 @@
+{
+  "name": "epub_alt_tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "copy-dir": "^0.4.0",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js",
+	"start": "node app.js"
+  },
+  "author": "Paras Anand",
+  "license": "ISC"
+}
