@@ -5,10 +5,17 @@ let folderPath = 'output/';
 let projectName, numberOfFiles;
 let jsonObj;
 
+async function MkdirOutput() {
+  await mkdirp('./output/', function (err) {
+    if (err) console.error(err)
+    else console.log('Output directory created!')
+  });
+}
+
 async function CloneFiles() {
   try {
     await fse.copy('./input/', './output/')
-    console.log('Files cloned to output -> ok!');
+    console.log('Files cloned -> ok!');
   } catch (err) {
     console.error(err)
   }
@@ -55,6 +62,7 @@ async function WriteJSON() {
 }
 
 async function init() {
+  await MkdirOutput();
   await CloneFiles();
   jsonObj ='[';
   await GetProjectName();
