@@ -15,7 +15,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "preinstall": "npm i -g http-server",
+    "preinstall": "npm install -g bower & npm install -g http-server",
     "start": "node server.js"
   },
   "author": "Paras Anand",
