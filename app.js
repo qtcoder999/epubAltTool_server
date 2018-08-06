@@ -50,10 +50,10 @@ module.exports.start1 = async function (req , res){
     if(ext.trim() == '.html')
     {
       let xhtml_filename = file.substr(0, file.lastIndexOf(".")) + ".xhtml";
-      console.log(xhtml_filename);
+      console.log(newPath + xhtml_filename);
     
       fs.rename(newPath+file, newPath + xhtml_filename, function (err) {
-        console.log(newPath + xhtml_filename);
+        //console.log(newPath + xhtml_filename);
         if (err) throw err;
         //console.log('renamed complete');
       });
@@ -62,6 +62,7 @@ module.exports.start1 = async function (req , res){
 
     }
   });
+  res.send('ok');
 }
 
 module.exports.end1 = async function (req,res){
@@ -77,7 +78,7 @@ module.exports.end1 = async function (req,res){
       //console.log(xhtml_filename);
     
       fs.rename(newPath+file, newPath + html_filename, function (err) {
-        console.log(newPath + html_filename);
+        //console.log(newPath + html_filename);
         if (err) throw err;
         //console.log('renamed complete');
       });
@@ -86,6 +87,7 @@ module.exports.end1 = async function (req,res){
 
     } 
   });
+  res.send('ok');
 }
 
 async function MakeJSON_HTMLFileNames(newPath, projectName) {
