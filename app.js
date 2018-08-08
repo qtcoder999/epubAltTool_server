@@ -128,8 +128,7 @@ async function WriteJSON() {
     console.log('JSON saved!');
   });
 }
-
-async function init() {
+module.exports.init = async function (){
   await MkdirOutput();
   await CloneFiles();
   jsonObj ='[';
@@ -138,4 +137,4 @@ async function init() {
   await WriteJSON();
 }
 
-init();
+module.exports.init();
