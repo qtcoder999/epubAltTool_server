@@ -14,7 +14,7 @@ var projectStart = require('./app.js');
 router.post('/iframeData', function (req, res) { req.setTimeout(0); getData(req, res); });
 router.post('/start', function (req, res) { req.setTimeout(0); projectStart.start1(req, res); });
 router.post('/end', function (req, res) { req.setTimeout(0); projectStart.end1(req, res); });
-router.get('/init', function (req, res) { req.setTimeout(0); projectStart.init(); res.send('ok');});
+router.post('/init', function (req, res) { req.setTimeout(0); projectStart.init(); res.send('ok');});
 
 //app.get('/', (req, res) => res.send('Hello World!'))
 
