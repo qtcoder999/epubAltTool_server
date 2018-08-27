@@ -13,9 +13,11 @@
     "nodemon": "^1.18.3",
     "path": "^0.12.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gm": "^1.23.1"
+  },
   "scripts": {
-    "preinstall": "npm install -g bower & npm install -g http-server",
+    "preinstall": "npm install -g bower & npm install -g http-server & npm install -g nodemon",
     "start": "node server.js"
   },
   "author": "Paras Anand",
