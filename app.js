@@ -1,8 +1,9 @@
 let fs = require('fs');
 const fse = require('fs-extra');
 var mkdirp = require('mkdirp');
+var formidable = require('formidable');
 let folderPath = 'input/';
-let projectName, numberOfFiles;
+let projectName;
 let jsonObj;
 var path = require('path');
 var gm = require('gm').subClass({ imageMagick: true });
@@ -141,11 +142,29 @@ module.exports.crop = async function (req, res) {
   gm("." + decodeURIComponent(req.body.srcPath))
     .crop(req.body.width, req.body.height, req.body.x, req.body.y)
     .write("." + decodeURIComponent(req.body.srcPath), function (err) {
-      if (!err) console.log('Cropping done');
+      if (!err) {
+        console.log('Cropping done!');
+        res.send('ok');
+      }
       else {
         console.log(err);
       }
     });
+}
+
+module.exports.uploadProject = async function (req, res) {
+  
+  var form = new formidable.IncomingForm();
+
+  form.parse(req);
+
+  form.on('fileBegin', function (name, file){
+      file.path = __dirname + '/uploads/' + file.name;
+  });
+
+  form.on('file', function (name, file){
+      res.send("OK");
+  });
 }
 
 module.exports.init();

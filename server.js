@@ -15,7 +15,8 @@ router.post('/iframeData', function (req, res) { req.setTimeout(0); projectStart
 router.post('/start', function (req, res) { req.setTimeout(0); projectStart.start1(req, res); });
 router.post('/end', function (req, res) { req.setTimeout(0); projectStart.end1(req, res); });
 router.post('/init', function (req, res) { req.setTimeout(0); projectStart.init(); res.send('ok'); });
-router.post('/crop', function (req, res) { req.setTimeout(0); projectStart.crop(req, res); res.send('ok'); });
+router.post('/crop', function (req, res) { req.setTimeout(0); projectStart.crop(req, res); });
+router.post('/upload', function (req, res) {    req.setTimeout(0); projectStart.uploadProject(req, res); });
 
 //app.get('/', (req, res) => res.send('Hello World!'))
 
